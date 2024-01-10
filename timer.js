@@ -51,6 +51,11 @@
             if (timeLeft < 0) {
                 isRunning = false;
                 window.focus();
+                window.open(
+                    "https://programmercollege.jp/",
+                    "_blank",
+                    "menubar=0,width=300,height=200,top=100,left=100"
+                );
                 window.alert('時間です');
                 window.focus();
                 start.textContent = 'スタート';
