@@ -51,6 +51,11 @@
             if (timeLeft < 0) {
                 isRunning = false;
                 window.alert('時間です');
+                window.open(
+                    "https://programmercollege.jp/",
+                    "_blank",
+                    "menubar=0,width=300,height=200,top=100,left=100"
+                );
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
                 timeLeft = 0;
