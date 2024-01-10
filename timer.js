@@ -50,6 +50,7 @@
             // 残り時間が0になった時の処理
             if (timeLeft < 0) {
                 isRunning = false;
+                window.focus();
                 window.alert('時間です');
                 window.focus();
                 start.textContent = 'スタート';
