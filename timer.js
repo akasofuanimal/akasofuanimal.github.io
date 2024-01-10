@@ -16,10 +16,10 @@
     // 現在時刻と表示形式を合わせるために * 1000
     var timeToCountDown = 0;
 
-    Push.Permission.request(
-        () => console.log('許可されました！'),
-        () => console.log('許可されませんでした。')
-    );
+    // Push.Permission.request(
+    //     () => console.log('許可されました！'),
+    //     () => console.log('許可されませんでした。')
+    // );
 
     // clearTimeoutメソッドを使いたいので、その時用に変数定義
     var timerId;
@@ -57,22 +57,22 @@
             if (timeLeft < 0) {
                 isRunning = false;
                 window.focus();
-                if (Push.Permission.has()) {
-                    Push.create("時間です！", {
-                        body: "これはpush.jsのテスト通知です。",
-                        icon: 'icon.png',
-                        timeout: 4000,
-                        onClick: function () {
-                            window.focus();
-                            this.close();
-                        }
-                    });
-                }
-                window.open(
-                    "https://www.mes.co.jp/",
-                    "_blank",
-                    "menubar=0,width=300,height=200,top=100,left=100"
-                );
+                // if (Push.Permission.has()) {
+                //     Push.create("時間です！", {
+                //         body: "これはpush.jsのテスト通知です。",
+                //         icon: 'icon.png',
+                //         timeout: 4000,
+                //         onClick: function () {
+                //             window.focus();
+                //             this.close();
+                //         }
+                //     });
+                // }
+                // window.open(
+                //     "https://www.mes.co.jp/",
+                //     "_blank",
+                //     "menubar=0,width=300,height=200,top=100,left=100"
+                // );
                 music.currentTime = 0;
                 music.play();
                 window.alert('時間です');
