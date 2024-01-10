@@ -51,6 +51,7 @@
             if (timeLeft < 0) {
                 isRunning = false;
                 window.alert('時間です');
+                window.focus();
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
                 timeLeft = 0;
