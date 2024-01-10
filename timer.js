@@ -5,6 +5,7 @@
     var sec = document.getElementById('sec');
     var reset = document.getElementById('reset');
     var start = document.getElementById('start');
+    const music = new Audio('beep.mp3');
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
@@ -56,6 +57,8 @@
                     "_blank",
                     "menubar=0,width=300,height=200,top=100,left=100"
                 );
+                music.currentTime = 0;
+                music.play();
                 window.alert('時間です');
                 window.focus();
                 start.textContent = 'スタート';
