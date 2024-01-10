@@ -1,4 +1,4 @@
-//‘¦ŠÖ”
+//å³æ™‚é–¢æ•°
 (function () {
     var timer = document.getElementById('timer');
     var min = document.getElementById('min');
@@ -6,25 +6,25 @@
     var reset = document.getElementById('reset');
     var start = document.getElementById('start');
 
-    // ƒXƒ^[ƒgƒ^ƒCƒ€‚ğ‰Ÿ‚µ‚½‚ÌŠÔ‚ğ“ü‚ê‚é•Ï”
+    // ã‚¹ã‚¿ãƒ¼ãƒˆã‚¿ã‚¤ãƒ ã‚’æŠ¼ã—ãŸæ™‚ã®æ™‚é–“ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     var startTime;
 
-    // c‚èŠÔ‚ğŒvZ‚·‚é‚½‚ß‚Ì•Ï”
+    // æ®‹ã‚Šæ™‚é–“ã‚’è¨ˆç®—ã™ã‚‹ãŸã‚ã®å¤‰æ•°
     var timeLeft;
 
-    // Œ»İ‚Æ•\¦Œ`®‚ğ‡‚í‚¹‚é‚½‚ß‚É * 1000
+    // ç¾åœ¨æ™‚åˆ»ã¨è¡¨ç¤ºå½¢å¼ã‚’åˆã‚ã›ã‚‹ãŸã‚ã« * 1000
     var timeToCountDown = 0;
 
-    // clearTimeoutƒƒ\ƒbƒh‚ğg‚¢‚½‚¢‚Ì‚ÅA‚»‚Ì—p‚É•Ï”’è‹`
+    // clearTimeoutãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ã„ãŸã„ã®ã§ã€ãã®æ™‚ç”¨ã«å¤‰æ•°å®šç¾©
     var timerId;
 
-    // ƒJƒEƒ“ƒgƒ_ƒEƒ“‚Ìó‘Ô‚ğŠÇ—‚Å‚«‚é‚æ‚¤‚É‚·‚é
+    // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã®çŠ¶æ…‹ã‚’ç®¡ç†ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
     var isRunning = false;
 
-    // c‚èŠÔ‚ğ•\¦‚·‚é‚½‚ß‚ÉAƒ~ƒŠ•b‚ğ“n‚·‚ÆA•ª‚â•b‚É’¼‚µ‚Ä‚­‚ê‚éŠÖ”
+    // æ®‹ã‚Šæ™‚é–“ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ã€ãƒŸãƒªç§’ã‚’æ¸¡ã™ã¨ã€åˆ†ã‚„ç§’ã«ç›´ã—ã¦ãã‚Œã‚‹é–¢æ•°
     function updateTimer(t) {
 
-        // ˆø”‚Æ‚µ‚Ä“n‚³‚ê‚½t‚Åƒf[ƒ^ƒIƒuƒWƒFƒNƒg‚ğì‚è‚½‚¢‚Ì‚Å•Ï”d‚Æ‚¢‚¤•Ï”–¼‚Åì‚Á‚Ä‚İ‚é
+        // å¼•æ•°ã¨ã—ã¦æ¸¡ã•ã‚ŒãŸtã§ãƒ‡ãƒ¼ã‚¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œã‚ŠãŸã„ã®ã§å¤‰æ•°dã¨ã„ã†å¤‰æ•°åã§ä½œã£ã¦ã¿ã‚‹
         var d = new Date(t);
         var m = d.getMinutes();
         var s = d.getSeconds();
@@ -32,7 +32,7 @@
         s = ('0' + s).slice(-2);
         timer.textContent = m + ':' + s;
         
-        // ƒ^ƒCƒ}[‚ğƒ^ƒu‚É‚à•\¦‚·‚é
+        // ã‚¿ã‚¤ãƒãƒ¼ã‚’ã‚¿ãƒ–ã«ã‚‚è¡¨ç¤ºã™ã‚‹
         var title = timer.textContent = m + ':' + s;;
         document.title = title;
 
@@ -41,16 +41,17 @@
 
     function countDown() {
 
-        // 10ƒ~ƒŠ•bŒã‚ÉÀs‚·‚é
+        // 10ãƒŸãƒªç§’å¾Œã«å®Ÿè¡Œã™ã‚‹
         timerId = setTimeout(function () {
 
-            // c‚èŠÔ = ƒJƒEƒ“ƒg‚³‚ê‚éŠÔ - Œ»İ
+            // æ®‹ã‚Šæ™‚é–“ = ã‚«ã‚¦ãƒ³ãƒˆã•ã‚Œã‚‹æ™‚é–“ - ç¾åœ¨æ™‚åˆ»
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
-            // c‚èŠÔ‚ª0‚É‚È‚Á‚½‚Ìˆ—
+            // æ®‹ã‚Šæ™‚é–“ãŒ0ã«ãªã£ãŸæ™‚ã®å‡¦ç†
             if (timeLeft < 0) {
                 isRunning = false;
-                start.textContent = 'ƒXƒ^[ƒg';
+                window.alert('æ™‚é–“ã§ã™');
+                start.textContent = 'ã‚¹ã‚¿ãƒ¼ãƒˆ';
                 clearTimeout(timerId);
                 timeLeft = 0;
 
@@ -61,91 +62,91 @@
                 return;
             }
 
-            // countDown‚ğÄ‹A“I‚ÉŒÄ‚Ño‚·‚½‚ß‚É‹Lq
+            // countDownã‚’å†å¸°çš„ã«å‘¼ã³å‡ºã™ãŸã‚ã«è¨˜è¿°
             updateTimer(timeLeft)
             countDown();
 
         }, 10);
     }
 
-    // ƒXƒ^[ƒg‚ğ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—
+    // ã‚¹ã‚¿ãƒ¼ãƒˆã‚’æŠ¼ã—ãŸã¨ãã®å‡¦ç†
     start.addEventListener('click', function () {
 
         if (isRunning === false) {
             isRunning = true;
 
-            start.textContent = 'ƒXƒgƒbƒv';
+            start.textContent = 'ã‚¹ãƒˆãƒƒãƒ—';
             
             startTime = Date.now();
 
-            // ƒJƒEƒ“ƒgƒ_ƒEƒ“‚Ì‹@”\‚ÍÄ‹A“I‚ÉÀs
+            // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã®æ©Ÿèƒ½ã¯å†å¸°çš„ã«å®Ÿè¡Œ
             countDown();
         } else {
             isRunning = false;
 
-            // •\‹L‚ğStart‚É–ß‚·
-            start.textContent = 'ƒXƒ^[ƒg';
+            // è¡¨è¨˜ã‚’Startã«æˆ»ã™
+            start.textContent = 'ã‚¹ã‚¿ãƒ¼ãƒˆ';
 
-            // ‚±‚Ì“_‚ÌtimeLeft‚ÅXV‚µ‚Ä‚ ‚°‚é
+            // ã“ã®æ™‚ç‚¹ã®timeLeftã§æ›´æ–°ã—ã¦ã‚ã’ã‚‹
             timeToCountDown = timeLeft;
 
-            // ƒJƒEƒ“ƒg‚ğ~‚ß‚½‚¢‚Ì‚ÅclearTimeout‚·‚é
+            // ã‚«ã‚¦ãƒ³ãƒˆã‚’æ­¢ã‚ãŸã„ã®ã§clearTimeoutã™ã‚‹
             clearTimeout(timerId);
         }
     });
 
-    // •ª‚ğ‰Ÿ‚µ‚½‚Ìˆ—
+    // åˆ†ã‚’æŠ¼ã—ãŸæ™‚ã®å‡¦ç†
     min.addEventListener('click', function () {
 
-        // ƒJƒEƒ“ƒgƒ_ƒEƒ“’†‚Éİ’èŠÔ‚ğ•ÏX‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
+        // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ä¸­ã«è¨­å®šæ™‚é–“ã‚’å¤‰æ›´ã§ããªã„ã‚ˆã†ã«ã™ã‚‹
         if (isRunning === true) {
             return;
         }
 
-        // •ª = 60•b‚È‚Ì‚Å
+        // åˆ† = 60ç§’ãªã®ã§
         timeToCountDown += 60 * 1000;
 
-        // 60•ªA60•b‚ğ’´‚¦‚½‚ç0‚É‚·‚é
+        // 60åˆ†ã€60ç§’ã‚’è¶…ãˆãŸã‚‰0ã«ã™ã‚‹
         if (timeToCountDown >= 60 * 60 * 1000) {
             timeToCountDown = 0;
         }
 
-        // timeToCountDown‚ğtimer‚É”½‰f‚³‚¹‚½‚¢‚Ì‚ÅupDatetimer‚ğg‚¤
+        // timeToCountDownã‚’timerã«åæ˜ ã•ã›ãŸã„ã®ã§upDatetimerã‚’ä½¿ã†
         updateTimer(timeToCountDown);
     });
 
 
-    // •b‚ğ‰Ÿ‚µ‚½‚Ìˆ—
+    // ç§’ã‚’æŠ¼ã—ãŸæ™‚ã®å‡¦ç†
     sec.addEventListener('click', function () {
 
-        // ƒJƒEƒ“ƒgƒ_ƒEƒ“’†‚Éİ’èŠÔ‚ğ•ÏX‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
+        // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ä¸­ã«è¨­å®šæ™‚é–“ã‚’å¤‰æ›´ã§ããªã„ã‚ˆã†ã«ã™ã‚‹
         if (isRunning === true) {
             return;
         }
 
-        // 1•b‚È‚Ì‚Å
+        // 1ç§’ãªã®ã§
         timeToCountDown += 1000;
 
         if (timeToCountDown >= 60 * 60 * 1000) {
             timeToCountDown = 0;
         }
 
-        // timeToCountDown‚ğtimer‚É”½‰f‚³‚¹‚½‚¢‚Ì‚ÅupDatetimer‚ğg‚¤
+        // timeToCountDownã‚’timerã«åæ˜ ã•ã›ãŸã„ã®ã§upDatetimerã‚’ä½¿ã†
         updateTimer(timeToCountDown);
     });
 
 
-    // ƒŠƒZƒbƒg‚ğ‰Ÿ‚µ‚½‚Ìˆ—
+    // ãƒªã‚»ãƒƒãƒˆã‚’æŠ¼ã—ãŸæ™‚ã®å‡¦ç†
     reset.addEventListener('click', function () {
 
-        // ƒJƒEƒ“ƒgƒ_ƒEƒ“’†‚Éİ’èŠÔ‚ğ•ÏX‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
+        // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ä¸­ã«è¨­å®šæ™‚é–“ã‚’å¤‰æ›´ã§ããªã„ã‚ˆã†ã«ã™ã‚‹
         if (isRunning === true) {
             return;
         }
 
         timeToCountDown = 0;
 
-        // timeToCountDown‚ğtimer‚É”½‰f‚³‚¹‚½‚¢‚Ì‚ÅupDatetimer‚ğg‚¤
+        // timeToCountDownã‚’timerã«åæ˜ ã•ã›ãŸã„ã®ã§upDatetimerã‚’ä½¿ã†
         updateTimer(timeToCountDown);
     });
 })();
