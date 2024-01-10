@@ -53,7 +53,7 @@
                 isRunning = false;
                 window.focus();
                 window.open(
-                    "https://programmercollege.jp/",
+                    "https://www.mes.co.jp/",
                     "_blank",
                     "menubar=0,width=300,height=200,top=100,left=100"
                 );
