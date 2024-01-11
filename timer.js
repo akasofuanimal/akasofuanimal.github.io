@@ -89,10 +89,10 @@
                   title,
                   {
                     body: '時間です',
-                    icon: 'img/icon.png',
-                    tag: '',
+                    icon: 'icon.png',
+                    tag: 'timer',
                     data: {
-                      xxx: '任意のデータ'
+                      xxx: 'ABC123'
                     }
                   }
                 );
