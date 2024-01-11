@@ -11,6 +11,17 @@
              .then((permission) => {
             if (permission == 'granted') {
               // 許可
+                 var n = new Notification(
+                  title,
+                  {
+                    body: '時間です',
+                    icon: 'icon.png',
+                    tag: 'timer',
+                    data: {
+                      xxx: 'ABC123'
+                    }
+                  }
+                );
             } else if (permission == 'denied') {
               // 拒否
             } else if (permission == 'default') {
