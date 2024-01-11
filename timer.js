@@ -10,13 +10,13 @@
         .then((permission) => {
         if (permission == 'granted') {
         // 許可
-            alert(permission);
+            alert("許可");
         } else if (permission == 'denied') {
         // 拒否
-            alert(permission);
+            alert("拒否");
         } else if (permission == 'default') {
         // 無視
-            alert(permission);
+            alert("無視");
         }
         });
     }
