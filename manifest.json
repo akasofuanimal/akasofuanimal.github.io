@@ -7,7 +7,7 @@
   "description": "timer app.",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/icon.png",
       "sizes": "48x480",
       "type": "image/png"
     },
