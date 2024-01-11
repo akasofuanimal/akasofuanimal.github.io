@@ -77,11 +77,11 @@
                 var n = new Notification(
                   title,
                   {
-                    body: '本文です',
-                    icon: 'img/xxx.png',
+                    body: '時間です',
+                    icon: 'icon.png',
                     tag: '',
                     data: {
-                      xxx: '任意のデータ'
+                      xxx: 'コンテナNo.など'
                     }
                   }
                 );
