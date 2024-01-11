@@ -1,24 +1,26 @@
 //即時関数
 (function () {
-    // ブラウザが通知をサポートしているか確認する
-    if (!('Notification' in window)) {
-        alert('未対応のブラウザです');
-    }
-    else {
-    // 許可を求める
-        Notification.requestPermission()
-        .then((permission) => {
-        if (permission == 'granted') {
-        // 許可
-        } else if (permission == 'denied') {
-        // 拒否
-            alert("拒否");
-        } else if (permission == 'default') {
-        // 無視
-            alert("無視");
+    $('#allow_push_notification').click(function () {
+        // ブラウザが通知をサポートしているか確認する
+        if (!('Notification' in window)) {
+            alert('未対応のブラウザです');
         }
-        });
-    }
+        else {
+        // 許可を求める
+            Notification.requestPermission()
+            .then((permission) => {
+            if (permission == 'granted') {
+            // 許可
+            } else if (permission == 'denied') {
+            // 拒否
+                alert("拒否");
+            } else if (permission == 'default') {
+            // 無視
+                alert("無視");
+            }
+            });
+        }
+    });
     var timer = document.getElementById('timer');
     var min = document.getElementById('min');
     var sec = document.getElementById('sec');
