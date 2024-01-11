@@ -1,33 +1,21 @@
 //即時関数
 (function () {
-    if ("Notification" in window) {
-        var permission = Notification.permission;
-    
-        if (permission === "denied" || permission === "granted") {
-          return;
-        }
-    
+    // ブラウザが通知をサポートしているか確認する
+    if (!('Notification' in window)) {
+        alert('未対応のブラウザです');
+    }
+    else {
+    // 許可を求める
         Notification.requestPermission()
-             .then((permission) => {
-            if (permission == 'granted') {
-              // 許可
-                 var n = new Notification(
-                  title,
-                  {
-                    body: '時間です',
-                    icon: 'icon.png',
-                    tag: 'timer',
-                    data: {
-                      xxx: 'ABC123'
-                    }
-                  }
-                );
-            } else if (permission == 'denied') {
-              // 拒否
-            } else if (permission == 'default') {
-              // 無視
-            }
-          });;
+        .then((permission) => {
+        if (permission == 'granted') {
+        // 許可
+        } else if (permission == 'denied') {
+        // 拒否
+        } else if (permission == 'default') {
+        // 無視
+        }
+        });
     }
     var timer = document.getElementById('timer');
     var min = document.getElementById('min');
@@ -86,6 +74,17 @@
             if (timeLeft < 0) {
                 isRunning = false;
                 window.focus();
+                var n = new Notification(
+                  title,
+                  {
+                    body: '本文です',
+                    icon: 'img/xxx.png',
+                    tag: '',
+                    data: {
+                      xxx: '任意のデータ'
+                    }
+                  }
+                );
                 // if (Push.Permission.has()) {
                 //     Push.create("時間です！", {
                 //         body: "これはpush.jsのテスト通知です。",
