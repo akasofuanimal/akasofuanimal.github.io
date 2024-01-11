@@ -10,7 +10,6 @@
         .then((permission) => {
         if (permission == 'granted') {
         // 許可
-            alert("許可");
         } else if (permission == 'denied') {
         // 拒否
             alert("拒否");
