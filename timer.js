@@ -85,7 +85,17 @@
                 music.currentTime = 0;
                 music.play();
                 // window.alert('時間です');
-                var notification = new Notification("Hello, world!");
+                var n = new Notification(
+                  title,
+                  {
+                    body: '時間です',
+                    icon: 'img/icon.png',
+                    tag: '',
+                    data: {
+                      xxx: '任意のデータ'
+                    }
+                  }
+                );
                 window.focus();
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
