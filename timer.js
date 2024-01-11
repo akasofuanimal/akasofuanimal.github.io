@@ -1,5 +1,14 @@
 //即時関数
 (function () {
+    if ("Notification" in window) {
+        var permission = Notification.permission;
+    
+        if (permission === "denied" || permission === "granted") {
+          return;
+        }
+    
+        Notification.requestPermission();
+    }
     var timer = document.getElementById('timer');
     var min = document.getElementById('min');
     var sec = document.getElementById('sec');
@@ -75,7 +84,8 @@
                 // );
                 music.currentTime = 0;
                 music.play();
-                window.alert('時間です');
+                // window.alert('時間です');
+                var notification = new Notification("Hello, world!");
                 window.focus();
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
