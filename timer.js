@@ -7,7 +7,16 @@
           return;
         }
     
-        Notification.requestPermission();
+        Notification.requestPermission()
+             .then((permission) => {
+            if (permission == 'granted') {
+              // 許可
+            } else if (permission == 'denied') {
+              // 拒否
+            } else if (permission == 'default') {
+              // 無視
+            }
+          });;
     }
     var timer = document.getElementById('timer');
     var min = document.getElementById('min');
