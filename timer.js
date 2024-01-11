@@ -78,7 +78,7 @@
                 isRunning = false;
                 window.focus();
                 var n = new Notification(
-                  title,
+                  "timer",
                   {
                     body: '時間です',
                     icon: 'icon.png',
@@ -107,17 +107,6 @@
                 music.currentTime = 0;
                 music.play();
                 // window.alert('時間です');
-                var n = new Notification(
-                  title,
-                  {
-                    body: '時間です',
-                    icon: 'icon.png',
-                    tag: 'timer',
-                    data: {
-                      xxx: 'ABC123'
-                    }
-                  }
-                );
                 window.focus();
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
