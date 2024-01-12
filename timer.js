@@ -6,7 +6,6 @@
     var sec = document.getElementById('sec');
     var reset = document.getElementById('reset');
     var start = document.getElementById('start');
-    var allow_notification = document.getElementById('allow_push_notification');
     const music = new Audio('beep.mp3');
 
     // スタートタイムを押した時の時間を入れる変数
@@ -28,27 +27,24 @@
 
     // カウントダウンの状態を管理できるようにする
     var isRunning = false;
-
-    allow_notification.addEventListener('click', function () {
-     // ブラウザが通知をサポートしているか確認する
-      if (!('Notification' in window)) {
-          alert('未対応のブラウザです');
-      }
-      else {
-      // 許可を求める
-          Notification.requestPermission()
-          .then((permission) => {
-          if (permission == 'granted') {
-          // 許可
-          } else if (permission == 'denied') {
-          // 拒否
-              alert("拒否");
-          } else if (permission == 'default') {
-          // 無視
-              alert("無視");
-          }
-          });
-      }
+ 
+    if (!('Notification' in window)) {
+        alert('未対応のブラウザです');
+    }
+    else {
+    // 許可を求める
+        Notification.requestPermission()
+        .then((permission) => {
+        if (permission == 'granted') {
+        // 許可
+        } else if (permission == 'denied') {
+        // 拒否
+            alert("拒否");
+        } else if (permission == 'default') {
+        // 無視
+            alert("無視");
+        }
+        });
     });
     
     // 残り時間を表示するために、ミリ秒を渡すと、分や秒に直してくれる関数
@@ -110,7 +106,7 @@
                 // );
                 music.currentTime = 0;
                 music.play();
-                // window.alert('時間です');
+                window.alert('時間です');
                 window.focus();
                 start.textContent = 'スタート';
                 clearTimeout(timerId);
