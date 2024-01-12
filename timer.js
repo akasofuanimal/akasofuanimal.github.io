@@ -6,6 +6,7 @@
     var sec = document.getElementById('sec');
     var reset = document.getElementById('reset');
     var start = document.getElementById('start');
+    var allow_notification = document.getElementById('allow_push_notification');
     const music = new Audio('beep.mp3');
 
     // スタートタイムを押した時の時間を入れる変数
@@ -28,7 +29,7 @@
     // カウントダウンの状態を管理できるようにする
     var isRunning = false;
 
-      $('#allow_push_notification').click(function () {
+    allow_notification.addEventListener('click', function () {
      // ブラウザが通知をサポートしているか確認する
       if (!('Notification' in window)) {
           alert('未対応のブラウザです');
