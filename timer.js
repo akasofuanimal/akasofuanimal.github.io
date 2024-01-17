@@ -2,6 +2,7 @@
 (function () {
  
     var timer = document.getElementById('timer');
+    timer.style.fontSize = "60px"
     var min = document.getElementById('min');
     var sec = document.getElementById('sec');
     var reset = document.getElementById('reset');
@@ -28,23 +29,23 @@
     // カウントダウンの状態を管理できるようにする
     var isRunning = false;
  
-    if (!('Notification' in window)) {
-        alert('未対応のブラウザです');
-    }
-    else {
-    // 許可を求める
-        Notification.requestPermission()
-        .then((permission) => {
-        if (permission == 'granted') {
-        // 許可
-        } else if (permission == 'denied') {
-        // 拒否
-            alert("拒否");
-        } else if (permission == 'default') {
-        // 無視
-            alert("無視");
-        }
-    })};
+    // if (!('Notification' in window)) {
+    //     alert('未対応のブラウザです');
+    // }
+    // else {
+    // // 許可を求める
+    //     Notification.requestPermission()
+    //     .then((permission) => {
+    //     if (permission == 'granted') {
+    //     // 許可
+    //     } else if (permission == 'denied') {
+    //     // 拒否
+    //         alert("拒否");
+    //     } else if (permission == 'default') {
+    //     // 無視
+    //         alert("無視");
+    //     }
+    // })};
     
     // 残り時間を表示するために、ミリ秒を渡すと、分や秒に直してくれる関数
     function updateTimer(t) {
@@ -55,10 +56,12 @@
         var s = d.getSeconds();
         m = ('0' + m).slice(-2);
         s = ('0' + s).slice(-2);
-        timer.textContent = m + ':' + s;
+        // timer.textContent = m + ':' + s;
+         timer.textContent = m;
         
         // タイマーをタブにも表示する
-        var title = timer.textContent = m + ':' + s;;
+        // var title = timer.textContent = m + ':' + s;;
+        var title = timer.textContent = m;
         document.title = title;
 
     }
