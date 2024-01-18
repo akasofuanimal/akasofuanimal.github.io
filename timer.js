@@ -2,7 +2,7 @@
 (function () {
  
     var timer = document.getElementById('timer');
-    timer.style.fontSize = "60px"
+    timer.style.fontSize = "200px"
     var min = document.getElementById('min');
     var sec = document.getElementById('sec');
     var reset = document.getElementById('reset');
